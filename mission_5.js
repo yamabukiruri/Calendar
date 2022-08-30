@@ -91,6 +91,7 @@ function showProcess(){
     document.querySelector("#calendar").innerHTML = createHtml;
 }
 
+// メモ帳を作成
 function addNote(){
     let createHtml = '';
     createHtml += '<textarea id="textarea" placeholder="ここに予定を書き込む"></textarea>';
@@ -100,6 +101,7 @@ function addNote(){
     document. querySelector("#note").innerHTML = createHtml;
 }
 
+// メモ帳を閉じる
 function delateNote(){
     var textarea = document.getElementById("textarea");
     textarea.classList.toggle("delate");
@@ -111,6 +113,7 @@ function delateNote(){
     viewBtn.classList.toggle("delate");
 }
 
+// メモ帳を保存
 function saveNote(){
     var saveBtn = document.getElementById("saveBtn");
     var t = document.getElementById("textarea").value;
@@ -118,10 +121,11 @@ function saveNote(){
     alert("保存しました。");
 }
 
+// メモ帳の保存内容を読み込む
 function viewNote(){
     var text = window.localStorage.getItem("key");
     if (text == null) text = "データがありません";
-  if (text == "") text = "予定が入力されていません";
+  　if (text == "") text = "予定が入力されていません";
   document.getElementById("textarea").value = text;
 }
 
