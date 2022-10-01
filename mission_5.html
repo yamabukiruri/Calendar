@@ -3,20 +3,29 @@
     <head>
         <meta charset="UTF-8">
         <title>mission_5</title>
-        <link rel="stylesheet" href="mission_5.css">
+        <link rel="stylesheet" href="style.css">
 
         <!--フォント-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&display=swap" rel="stylesheet">
+
     </head>
 
     <body>
-        <div class="aside">
+        <div id="aside">
             <!--メモ欄-->
-            <div id="note"></div>
+            <textarea id="textarea" placeholder="ここに予定を書き込む"></textarea>
+            <div id="noteBtn">
+                <button id="delateBtn" onclick="note()">×</button>
+                <button id="saveBtn" class="whiteBtn" onclick="saveNote()">保存</button>
+                <button id="viewBtn" class="whiteBtn" onclick="viewNote()">読込</button>
+            </div>
         </div>
-        <div class="main">
+
+        <div id="mask" onclick="note()"></div>
+
+        <div id="main" class="fadeIn">
             <!-- xxxx年xx月を表示 -->
             <h1 id="year"></h1>
             <h2 id="month"></h2>
@@ -24,11 +33,12 @@
             <!-- カレンダー -->
             <div id="calendar"></div>
 
-            <div class="btn">
+            <div id="btn">
                 <button id="prev" onclick="prev()">◀</button>
                 <button id="next" onclick="next()">▶</button>
             </div>
-        </main>
-        <script src="mission_5.js"></script>
+        </div>
+
+        <script src="script.js"></script>
     </body>
 </html>
